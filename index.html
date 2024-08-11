@@ -7,25 +7,54 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+  <div class="window-border outer-border-dark">
+    <div class="window-header"><!-- Obere Zeile vom Fenster -->
+      <!-- Window Name, -> Minimize, Fullscreen, Close -->
+       <p>Display Properties</p>
+       <div>
+        <span class="outer-border-dark"><i class="fa-regular fa-window-minimize"></i></span>
+        <span class="outer-border-dark"><i class="fa-regular fa-window-maximize"></i></span>
+        <span class="outer-border-dark"><i class="fa-regular fa-rectangle-xmark"></i></span>
+      </div>
+
+    </div>
+    <div class="window-tabselector">
+      <span class="outer-border-dark">Background</span>
+      <span class="outer-border-dark-unchecked">Sceen Saver</span>
+      <span class="outer-border-dark-unchecked">Appearance</span>
+      <span class="outer-border-dark-unchecked">Settings</span>
+    </div>
+    <div class="window-content outer-border-dark">
+      <!-- <div class="screen-info"> </div> -->
+      <img src="/images/Monitor.png" alt="Monitor Frame">
+
+    </div>
+    <div class="window-buttons"><Span class="outer-border-dark">OK</Span><span class="outer-border-dark">Cancel</span><span class="outer-border-dark">Apply</span></div>
+  </div>
+
   <footer>
     <div class="navbar">
-      <a id="Menu" href="">Home</a>
+      <a id="Menu" class="outer-border-light" href=""><i class="fa-regular fa-gem"></i> Home</a>
 
       <a href="">About</a>
       <a href="">Work</a>
       <a href="">Contact</a>
 
-      <div class="time" id="current-time"></div>
+      <div class="time inner-border-light" id="current-time"></div>
     </div>
   </footer>
 
+  <script src="https://kit.fontawesome.com/0fb7d5606c.js" crossorigin="anonymous"></script>
   <script>
     let time = document.getElementById("current-time");
 
-    setInterval(() =>{
-      let d = new Date();
-      time.innerHTML = d.toLocaleTimeString();
-    },1000)
+    setInterval(() => {
+        let d = new Date();
+        d.setHours(d.getHours() + 2);
+        time.innerHTML = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    });
     
   </script>
 
